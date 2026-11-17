@@ -1,4 +1,4 @@
-# 🦊 FoxSuite (ReaFox Files)
+# 🦊 FoxSuite
 
 Plataforma de servicios web multimedia que incluye almacenamiento de archivos (**FoxDrop**), descarga de medios de redes sociales (**FoxGet**), y conversión multimedia (**FoxConvert**).
 
