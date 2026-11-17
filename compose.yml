@@ -1,0 +1,78 @@
+name: reafox-files
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    cpus: "0.5"
+    mem_limit: 512m
+    pids_limit: 100
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy:/etc/caddy:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    logging: &logs
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  app:
+    build: .
+    restart: unless-stopped
+    init: true
+    cpus: "2.5"
+    mem_limit: 6144m
+    pids_limit: 256
+    environment: &env
+      DATA_DIR: /data
+      LINK_KEY_FILE: /run/secrets/link-password.key
+      FOXGET_INSTAGRAM_COOKIES_DIR: /run/secrets/instagram-cookies
+      FOXGET_INSTAGRAM_COOKIES_FILE: "www.instagram.com_cookies.txt"
+      FOXGET_YOUTUBE_COOKIES_DIR: /run/secrets/youtube-cookies
+      PUBLIC_URL: https://reafoxtvsite.ddns.net
+      QUOTA_BYTES: "150000000000"
+      MIN_FREE_BYTES: "10000000000"
+    volumes:
+      - .:/app:ro
+      - app_data:/data
+      - /opt/reafox-secrets/link-password.key:/run/secrets/link-password.key:ro
+      - /opt/reafox-secrets/instagram-cookies:/run/secrets/instagram-cookies:ro
+      - /opt/reafox-secrets/youtube-cookies:/run/secrets/youtube-cookies:ro
+    logging: *logs
+  cleaner:
+    build: .
+    command: ["python", "app.py", "clean-loop"]
+    restart: unless-stopped
+    init: true
+    cpus: "0.5"
+    mem_limit: 512m
+    pids_limit: 64
+    environment: *env
+    volumes:
+      - app_data:/data
+    logging: *logs
+  previews:
+    build: .
+    command: ["python", "app.py", "preview-loop"]
+    restart: unless-stopped
+    init: true
+    cpus: "2.0"
+    mem_limit: 4096m
+    pids_limit: 128
+    environment: *env
+    volumes:
+      - app_data:/data
+    logging: *logs
+  bgutil:
+    image: brainicism/bgutil-ytdlp-pot-provider
+    restart: unless-stopped
+    cpus: "0.5"
+    mem_limit: 512m
+    pids_limit: 64
+
+volumes:
+  caddy_data:
+  caddy_config:
+  app_data:

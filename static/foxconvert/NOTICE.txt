@@ -1,0 +1,7 @@
+FoxConvert distributes Mediabunny 1.65.2, licensed under the Mozilla Public
+License 2.0. The browser bundle is built from the unmodified Mediabunny package
+and retains its license notices.
+
+Source: https://github.com/Vanilagy/mediabunny
+License: ./LICENSE-MPL-2.0.txt
+Build entry point and pinned dependencies: ../../tools/foxconvert/

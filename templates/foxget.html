@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div id="view-foxget" class="view" hidden>
+  <div class="page-heading"><span class="eyebrow">DESCARGAS PRIVADAS</span><h1>FoxGet</h1><p>Convierte enlaces de YouTube, Instagram, TikTok y X en MP4, MP3, WAV o AAC.</p></div>
+  <section class="upload-card">
+    <form id="foxgetForm">
+      <label>Enlace<input id="foxgetUrl" type="url" required placeholder="https://..."></label>
+      <div class="foxget-options">
+        <label>Formato<select id="foxgetFormat"><option value="mp4">MP4</option><option value="mp3">MP3</option><option value="wav">WAV</option><option value="aac">AAC</option></select></label>
+        <label id="foxgetQualityLabel">Calidad<select id="foxgetQuality"><option value="360">360p</option><option value="480">480p</option><option value="720" selected>720p</option><option value="1080">1080p</option><option value="1440">1440p</option><option value="2160">4K</option></select></label>
+      </div>
+      <button id="foxgetSubmit">Obtener archivo →</button>
+    </form>
+    <p class="muted fine">Un enlace por trabajo. Sin playlists ni directos. Los resultados se eliminan 5 minutos después de la primera descarga o, como máximo, 1 hora después de quedar listos.</p>
+  </section>
+  <section id="foxgetJobs" class="foxget-jobs" aria-live="polite"></section>
+</div>
+<script src="/static/foxget.js?v=49"></script>
+{% endblock %}

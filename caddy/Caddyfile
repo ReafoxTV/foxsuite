@@ -1,0 +1,22 @@
+reafoxtvsite.ddns.net {
+    @static path /static/*
+    @dynamic not path /static/*
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        X-Frame-Options DENY
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self'; img-src 'self' data: https://*.cdninstagram.com https://*.fbcdn.net https://*.tiktokcdn.com https://*.twimg.com https://*.ytimg.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
+    }
+    header @dynamic >Cache-Control "no-store, no-cache, must-revalidate, private"
+    header @static >Cache-Control "public, max-age=31536000, immutable"
+
+    # Nueva regla: redirigir /foxcut al servidor Flask en localhost:5000
+    handle /foxcut* {
+        reverse_proxy localhost:5000
+    }
+
+    # Mantener el resto como antes
+    reverse_proxy app:8080
+}

@@ -1,0 +1,584 @@
+#panel[data-portal-view="foxconvert"] .portal-welcome>span {
+	color: var(--accent);
+}
+
+#panel[data-portal-view="foxconvert"]:not([hidden]),
+#view-foxconvert:not([hidden]),
+#view-foxconvert.fox-enter-anim,
+#view-foxconvert.fox-view-animate,
+#view-foxconvert.fox-fade-trigger {
+	animation: none !important;
+}
+
+#view-foxconvert .hero,
+#view-foxconvert .upload-card {
+	animation: none !important;
+}
+
+#view-foxconvert .hero {
+	padding: 20px 10px 24px;
+}
+
+#view-foxconvert .hero .eyebrow {
+	color: #ffba86;
+}
+
+#view-foxconvert .hero h1 {
+	font-size: 52px;
+	line-height: 1.12;
+	letter-spacing: 0;
+}
+
+#view-foxconvert .hero p {
+	color: #aeb8cd;
+	font-size: 15px;
+}
+
+#view-foxconvert .foxconvert-nav {
+	margin-bottom: 30px;
+}
+
+#view-foxconvert .foxconvert-device-notice {
+	margin: 0 auto 16px;
+	max-width: 1000px;
+}
+
+#view-foxconvert .foxconvert-device-notice .module-availability-icon {
+	order: 0;
+}
+
+#view-foxconvert .foxconvert-device-copy {
+	order: 1;
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+#view-foxconvert .foxconvert-gpu-logo {
+	display: grid;
+	width: 90px;
+	height: 54px;
+	flex: 0 0 90px;
+	order: 2;
+	margin-left: auto;
+	place-items: center;
+	overflow: visible;
+}
+
+#view-foxconvert .foxconvert-device-notice[data-provider="amd"] {
+	border-color: #ff515155;
+	border-left-color: #ef3434;
+	background: linear-gradient(110deg,#ef343422,#ef343409 65%,#141b2a 100%);
+}
+
+#view-foxconvert .foxconvert-device-notice[data-provider="nvidia"] {
+	border-color: #76c44255;
+	border-left-color: #76b900;
+	background: linear-gradient(110deg,#76b90024,#76b90009 65%,#141b2a 100%);
+}
+
+#view-foxconvert .foxconvert-device-notice[data-provider="intel"] {
+	border-color: #438dff55;
+	border-left-color: #1687ff;
+	background: linear-gradient(110deg,#1687ff24,#1687ff09 65%,#141b2a 100%);
+}
+
+#view-foxconvert .foxconvert-gpu-logo img {
+	display: block;
+	width: 84px;
+	height: 50px;
+	object-fit: contain;
+	filter: drop-shadow(0 1px 2px rgba(0,0,0,.4));
+}
+
+#view-foxconvert #foxconvertDeviceIcon[data-state="success"] {
+	border-color: #79d8b360;
+	color: #8bdcbb;
+}
+
+#view-foxconvert .foxconvert-device-copy {
+	display: grid;
+	gap: 4px;
+}
+
+#view-foxconvert .foxconvert-device-copy strong {
+	font-size: 13px;
+}
+
+#view-foxconvert .foxconvert-device-copy>span {
+	color: #cbbba9;
+	font-size: 12px;
+	line-height: 1.5;
+	overflow-wrap: anywhere;
+}
+
+#view-foxconvert .foxconvert-card {
+	display: grid;
+	gap: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 30px;
+	border: 1px solid rgba(255,255,255,.09);
+	border-radius: 22px;
+	background: linear-gradient(180deg,rgba(17,24,37,.9),rgba(15,20,32,.96));
+	box-shadow: 0 22px 50px rgba(0,0,0,.24);
+}
+
+#view-foxconvert .foxconvert-dropzone {
+	display: grid;
+	justify-items: center;
+	gap: 10px;
+	margin: 0;
+	padding: clamp(26px,6vw,48px) 18px;
+	border: 1px dashed rgba(255,255,255,.2);
+	border-radius: 15px;
+	background: rgba(9,15,25,.35);
+	color: #edf2ff;
+	text-align: center;
+	cursor: pointer;
+	transition: border-color .18s ease,background .18s ease,transform .18s ease;
+}
+
+#view-foxconvert .foxconvert-dropzone:hover,
+#view-foxconvert .foxconvert-dropzone.is-dragging {
+	transform: translateY(-1px);
+	border-color: rgba(255,173,105,.65);
+	background: rgba(255,173,105,.07);
+}
+
+#view-foxconvert .foxconvert-dropzone input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+#view-foxconvert .foxconvert-dropzone:focus-within {
+	outline: 2px solid rgba(255,173,105,.7);
+	outline-offset: 3px;
+}
+
+#view-foxconvert .foxconvert-drop-icon,
+#view-foxconvert .foxconvert-file-mark {
+	display: grid;
+	place-items: center;
+	width: 52px;
+	height: 52px;
+	border-radius: 15px;
+	background: rgba(255,173,105,.1);
+	color: #ffc38c;
+}
+
+#view-foxconvert .foxconvert-dropzone>span:last-child {
+	color: #aeb8cd;
+	font-size: 12px;
+}
+
+#view-foxconvert .foxconvert-file-info {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 0;
+	padding: 13px;
+	border: 1px solid rgba(255,255,255,.09);
+	border-radius: 13px;
+	background: rgba(255,255,255,.025);
+}
+
+#view-foxconvert .foxconvert-file-mark {
+	width: 42px;
+	height: 42px;
+	flex: 0 0 42px;
+	border-radius: 12px;
+}
+
+#view-foxconvert .foxconvert-file-copy {
+	display: grid;
+	gap: 4px;
+	min-width: 0;
+	flex: 1;
+}
+
+#view-foxconvert .foxconvert-file-copy strong {
+	overflow: hidden;
+	color: #edf2ff;
+	font-size: 13px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#view-foxconvert .foxconvert-file-copy small {
+	color: #aeb8cd;
+	font-size: 11px;
+}
+
+#view-foxconvert .foxconvert-file-info button {
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+#view-foxconvert .foxconvert-options {
+	display: grid;
+	grid-template-columns: repeat(2,minmax(0,1fr));
+	gap: 14px;
+}
+
+#view-foxconvert .foxconvert-settings {
+	display: grid;
+	gap: 16px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255,255,255,.09);
+}
+
+#view-foxconvert .foxconvert-settings[hidden] {
+	display: none;
+}
+
+#view-foxconvert .foxconvert-settings.is-entering,
+#view-foxconvert .foxconvert-file-info.is-entering {
+	animation: foxconvert-settings-in .36s cubic-bezier(.2,.7,.25,1) both;
+}
+
+#view-foxconvert .foxconvert-settings-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+#view-foxconvert .foxconvert-settings-eyebrow {
+	color: #ffba86;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: .12em;
+}
+
+#view-foxconvert .foxconvert-settings-heading h2 {
+	margin: 5px 0 0;
+	color: #edf2ff;
+	font-size: 19px;
+	line-height: 1.3;
+}
+
+#view-foxconvert .foxconvert-category-badge {
+	padding: 7px 10px;
+	border: 1px solid rgba(255,173,105,.24);
+	border-radius: 999px;
+	background: rgba(255,173,105,.08);
+	color: #ffc38c;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: .08em;
+}
+
+#view-foxconvert .foxconvert-options label {
+	display: grid;
+	gap: 7px;
+	margin: 0;
+	color: #aeb8cd;
+	font-size: 12px;
+}
+
+#view-foxconvert .foxconvert-options select,
+#view-foxconvert .foxconvert-options input {
+	width: 100%;
+	min-height: 46px;
+	margin: 0;
+	padding: 0 13px;
+	border: 1px solid rgba(255,255,255,.13);
+	border-radius: 11px;
+	background: #0e1423;
+	color: #edf2ff;
+	font-size: 13px;
+	transition: border-color .18s ease,box-shadow .18s ease,background .18s ease;
+}
+
+#view-foxconvert .foxconvert-options select:focus,
+#view-foxconvert .foxconvert-options input:focus {
+	border-color: rgba(255,173,105,.7);
+	box-shadow: 0 0 0 3px rgba(255,173,105,.1);
+	outline: 0;
+}
+
+#view-foxconvert .foxconvert-options select:disabled,
+#view-foxconvert .foxconvert-options input:disabled {
+	opacity: .6;
+}
+
+#view-foxconvert .foxconvert-input-suffix {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+#view-foxconvert .foxconvert-options .foxconvert-input-suffix input {
+	padding-right: 58px;
+}
+
+#view-foxconvert .foxconvert-input-suffix>span {
+	position: absolute;
+	right: 13px;
+	color: #8995aa;
+	font-size: 11px;
+	pointer-events: none;
+}
+
+#view-foxconvert .foxconvert-settings-hint {
+	margin: -3px 0 0;
+	color: #8895aa;
+	font-size: 11px;
+	line-height: 1.5;
+}
+
+#view-foxconvert #foxconvertSettings:not([hidden]) + .foxconvert-actions {
+	margin-top: -28px;
+}
+
+#view-foxconvert #foxconvertCustomImageQuality[hidden] {
+	display: none;
+}
+
+#view-foxconvert .foxconvert-custom-resolution {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: repeat(3,minmax(0,1fr));
+	gap: 14px;
+	padding: 14px;
+	border: 1px solid rgba(255,255,255,.08);
+	border-radius: 12px;
+	background: rgba(255,255,255,.025);
+}
+
+#view-foxconvert .foxconvert-custom-resolution[hidden] {
+	display: none;
+}
+
+#view-foxconvert .foxconvert-custom-resolution label {
+	display: grid;
+	gap: 7px;
+	margin: 0;
+	color: #aeb8cd;
+	font-size: 12px;
+}
+
+#view-foxconvert .foxconvert-save-destination {
+	display: grid;
+	grid-column: 1 / -1;
+	gap: 5px;
+	padding: 13px 15px;
+	border: 1px solid rgba(255,173,105,.18);
+	border-radius: 12px;
+	background: rgba(255,173,105,.045);
+}
+
+#view-foxconvert .foxconvert-save-destination strong {
+	color: #f0c49f;
+	font-size: 12px;
+}
+
+#view-foxconvert .foxconvert-save-destination span {
+	color: #aeb8cd;
+	font-size: 11px;
+	line-height: 1.5;
+}
+
+@keyframes foxconvert-settings-in {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#view-foxconvert .foxconvert-actions {
+	display: flex;
+	gap: 10px;
+}
+
+#view-foxconvert .foxconvert-actions button {
+	min-height: 46px;
+	margin: 0;
+}
+
+#view-foxconvert .foxconvert-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	padding: 10px 17px;
+	border: 1px solid transparent;
+	border-radius: 12px;
+	background: linear-gradient(110deg,#ff9b55,#ff7847);
+	box-shadow: 0 5px 16px rgba(255,120,71,.18);
+	color: #19120e;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: filter .18s ease,transform .18s ease;
+}
+
+#view-foxconvert .foxconvert-primary:hover {
+	filter: brightness(1.05);
+	transform: translateY(-1px);
+}
+
+#view-foxconvert .foxconvert-primary:disabled {
+	filter: grayscale(.5);
+	opacity: .65;
+	cursor: not-allowed;
+	transform: none;
+}
+
+#view-foxconvert .foxconvert-progress-wrap {
+	display: grid;
+	gap: 8px;
+}
+
+#view-foxconvert .foxconvert-progress-wrap:not([hidden]) {
+	animation: foxconvert-feedback-in .32s ease-out both;
+}
+
+#view-foxconvert .foxconvert-progress-heading {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	color: #c4cbdd;
+	font-size: 12px;
+}
+
+#view-foxconvert .foxconvert-progress {
+	width: 100%;
+	height: 8px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 99px;
+	background: rgba(255,255,255,.1);
+}
+
+#view-foxconvert .foxconvert-progress-fill {
+	display: block;
+	width: 0;
+	height: 100%;
+	border-radius: inherit;
+	background: linear-gradient(90deg,#ff9b55,#ff7847);
+	transition: width .24s ease;
+}
+
+#view-foxconvert .foxconvert-progress.is-indeterminate .foxconvert-progress-fill {
+	width: 35%;
+	animation: foxconvert-progress-sweep 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes foxconvert-progress-sweep {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(285%);
+	}
+}
+
+#view-foxconvert .foxconvert-status {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+#view-foxconvert .foxconvert-status:not([hidden]) {
+	animation: foxconvert-feedback-in .36s ease-out both;
+}
+
+@keyframes foxconvert-feedback-in {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#view-foxconvert .foxconvert-status[data-state="success"] {
+	border-color: #79d8b32b;
+	border-left-color: #73d6ad;
+	background: linear-gradient(110deg,#5fd3a218,#79d8b30b 70%);
+	color: #dff8ed;
+}
+
+#view-foxconvert .foxconvert-status[data-state="success"] .module-availability-icon {
+	border-color: #79d8b360;
+	color: #8bdcbb;
+}
+
+#view-foxconvert .foxconvert-privacy-note {
+	margin: 0;
+	color: #8895aa;
+	font-size: 11px;
+	line-height: 1.55;
+}
+
+@media(max-width:600px) {
+	#view-foxconvert .hero h1 {
+		font-size: clamp(33px,8vw,46px);
+	}
+
+	#view-foxconvert .foxconvert-card {
+		padding: 20px;
+	}
+
+	#view-foxconvert .foxconvert-options {
+		grid-template-columns: minmax(0,1fr);
+	}
+
+	#view-foxconvert .foxconvert-custom-resolution {
+		grid-template-columns: minmax(0,1fr);
+	}
+
+	#view-foxconvert .foxconvert-settings-heading {
+		align-items: flex-start;
+	}
+
+	#view-foxconvert .foxconvert-actions {
+		flex-direction: column;
+	}
+
+	#view-foxconvert .foxconvert-file-info {
+		flex-wrap: wrap;
+	}
+
+	#view-foxconvert .foxconvert-file-copy {
+		flex-basis: calc(100% - 60px);
+	}
+
+	#view-foxconvert .foxconvert-file-info button {
+		margin-left: 54px;
+	}
+}
+
+@media(prefers-reduced-motion:reduce) {
+	#view-foxconvert .foxconvert-dropzone,
+	#view-foxconvert .foxconvert-primary,
+	#view-foxconvert .foxconvert-options select,
+	#view-foxconvert .foxconvert-options input,
+	#view-foxconvert .foxconvert-progress-wrap:not([hidden]),
+	#view-foxconvert .foxconvert-status:not([hidden]),
+	#view-foxconvert .foxconvert-progress.is-indeterminate .foxconvert-progress-fill {
+		transition: none;
+		animation: none;
+	}
+
+	#view-foxconvert .foxconvert-settings.is-entering,
+	#view-foxconvert .foxconvert-file-info.is-entering {
+		animation: none;
+	}
+}

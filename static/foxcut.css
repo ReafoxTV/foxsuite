@@ -1,0 +1,44 @@
+#foxcut-container h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.drop {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.drop:hover {
+  border-color: #6a6af0;
+}
+
+#preview-container video {
+  margin-bottom: 1.5rem;
+}
+
+#timeline {
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: #ddd;
+  outline: none;
+}
+
+#timeline::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6a6af0;
+  cursor: pointer;
+}
+
+#timeline::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6a6af0;
+  border: none;
+  cursor: pointer;
+}

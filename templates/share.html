@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="share-page">
+  <span class="eyebrow">UN ARCHIVO PARA TI</span>
+  <h1>{{ f.name }}</h1>
+  <p class="type-badge">{{ file_label(f.name) }}</p>
+  <p class="share-meta">{{ format_size(f.size) }} · Disponible hasta <time data-time="{{ f.expires }}"></time></p>
+
+  {% if unlocked %}
+    <div class="share-content">
+      <div class="preview-shell" id="mediaPreview">
+        <p class="preview-note">Comprobando vista previa…</p>
+      </div>
+
+      <div class="share-actions">
+        <a class="button share-download" href="/f/{{ f.id }}/download">
+          <span class="fox-action-icon" aria-hidden="true">{% include "icons10/descargar.svg" %}</span>
+          <span>Descargar original</span>
+        </a>
+
+        <button class="link-card" id="shareCopy" type="button">
+          <small>
+            <span class="fox-action-icon" aria-hidden="true">{% include "icons10/copiar-enlace.svg" %}</span>
+            HAZ CLIC PARA COPIAR EL ENLACE
+          </small>
+          <code id="shareURL"></code>
+        </button>
+      </div>
+
+      <p class="share-note">La preview es una visualización ligera. El original conserva su tamaño y calidad.</p>
+    </div>
+  {% else %}
+    <div class="share-locked">
+      <p><span class="fox-action-icon" aria-hidden="true">{% include "icons10/candado.svg" %}</span>Este archivo está protegido.</p>
+      <form method="post" action="{{ url_for('share', fid=f.id) }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="share_csrf_token" value="{{ share_csrf }}">
+        <label>Contraseña<input type="password" name="password" maxlength="256" required autocomplete="current-password"></label>
+        <button>Desbloquear archivo →</button>
+      </form>
+    </div>
+  {% endif %}
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  <p class="muted fine share-safety-note">Descarga solo archivos de confianza.</p>
+</section>
+
+<script src="/static/time.js?v=2"></script>
+{% if unlocked %}
+<script src="/static/media.js?v=media29"></script>
+{% endif %}
+{% endblock %}

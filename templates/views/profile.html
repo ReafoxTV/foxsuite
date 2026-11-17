@@ -1,0 +1,53 @@
+<div id="view-profile" class="view" hidden>
+  <div class="page-heading">
+    <span class="eyebrow">TU IDENTIDAD EN FOXDROP</span>
+    <h1>Mi perfil</h1>
+    <p>Tu foto, tu nombre y el color de tu perfil.</p>
+  </div>
+  <section id="adminProfilePanel" class="portal-admin-profile" hidden>
+    <div><h2>Administración</h2><p>Gestiona usuarios, módulos y mensajes enviados por los usuarios.</p></div>
+    <a href="/users" data-view="users" id="adminNav" hidden>Administración</a>
+  </section>
+  <div class="profile-top-grid">
+    <div class="profile-side">
+      <section class="profile-card profile-photo-card" id="profileCard" data-accent="orange">
+        <div class="profile-cover"></div>
+        <div id="profileAvatar" class="profile-avatar"></div>
+        <h2 id="profileTitle"></h2>
+        <p id="profileHandle" class="muted"></p>
+        <span id="profileRole" class="profile-role"></span>
+        <div class="avatar-actions">
+          <label class="button secondary avatar-upload">Cambiar foto<input id="avatarInput" type="file" accept="image/jpeg,image/png,image/webp"></label>
+          <button id="removeAvatar" class="secondary small" type="button">Quitar foto</button>
+        </div>
+      </section>
+      <section class="profile-security">
+        <details id="passwordDetails">
+          <summary><span><strong>Seguridad</strong><small>Cambiar tu contraseña</small></span></summary>
+          <form id="passwordForm" class="password-grid">
+            <label class="current-password">Contraseña actual<input id="currentPassword" type="password" autocomplete="current-password" maxlength="256" required></label>
+            <label>Nueva contraseña<input id="nextPassword" type="password" autocomplete="new-password" minlength="12" maxlength="256" required></label>
+            <label>Repite la contraseña nueva<input id="repeatPassword" type="password" autocomplete="new-password" minlength="12" maxlength="256" required></label>
+            <div class="password-actions"><button>Actualizar contraseña</button></div>
+          </form>
+        </details>
+      </section>
+    </div>
+    <section class="profile-info-card">
+      <h2>Datos del perfil</h2>
+      <form id="profileForm">
+        <label>Usuario de acceso<input id="profileUsername" disabled></label>
+        <label>Nombre visible<input id="displayName" maxlength="60" required placeholder="Cómo quieres aparecer en FoxDrop"></label>
+        <fieldset class="profile-colors">
+          <legend>Color del perfil</legend>
+          <label>Estilo<select id="profileMode"><option value="solid">Un color</option><option value="gradient">Degradado de dos colores</option></select></label>
+          <div class="color-grid">
+            <label>Primer color<div class="color-control"><input type="color" id="colorStartPicker" value="#ffad69"><input type="text" id="colorStartHex" value="#ffad69" pattern="#[0-9a-fA-F]{6}" maxlength="7" required spellcheck="false"></div></label>
+            <label id="colorEndLabel">Segundo color<div class="color-control"><input type="color" id="colorEndPicker" value="#b3699b"><input type="text" id="colorEndHex" value="#b3699b" pattern="#[0-9a-fA-F]{6}" maxlength="7" required spellcheck="false"></div></label>
+          </div>
+        </fieldset>
+        <div class="profile-save-row"><button>Guardar cambios</button></div>
+      </form>
+    </section>
+  </div>
+</div>

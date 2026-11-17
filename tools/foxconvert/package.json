@@ -1,0 +1,16 @@
+{
+  "name": "foxconvert-browser-engine",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "esbuild engine-entry.js --bundle --format=iife --global-name=FoxConvertEngine --target=es2022 --minify --legal-comments=inline --outfile=dist/mediabunny.bundle.js"
+  },
+  "dependencies": {
+    "@mediabunny/aac-encoder": "1.65.2",
+    "@mediabunny/mp3-encoder": "1.65.2",
+    "mediabunny": "1.65.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0"
+  }
+}

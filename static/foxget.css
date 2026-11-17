@@ -1,0 +1,28 @@
+.foxget-nav{cursor:pointer;border:0;background:transparent;color:#b9c2d8;font:inherit;padding:10px 14px;border-radius:9px;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s,transform .2s}
+.foxget-nav:hover{background:#ffffff09;color:#fff;transform:translateY(-1px)}
+.foxget-nav.active{background:#ffad6918;color:#ffc38f}
+.foxget-tab{display:grid;gap:1rem}
+.foxget-tab[hidden]{display:none!important}
+.foxget-motion{animation:none}
+.foxget-file-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center}
+.foxget-file-main{min-width:0}
+.foxget-file-title{display:flex;gap:10px;align-items:center;min-width:0}
+.foxget-file-title strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.foxget-file-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.foxget-file-actions .button,.foxget-file-actions button{display:inline-flex;align-items:center;justify-content:center;height:40px;min-height:40px;margin:0;padding:0 14px;font-size:13px;white-space:nowrap}
+@media(max-width:700px){.foxget-file-row{grid-template-columns:1fr}.foxget-file-actions{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){.foxget-tab{animation:none!important}}
+
+
+/* --- FoxGet: campo de enlace pulido --- */
+.upload-card{max-width:760px;margin-inline:auto;padding:28px;border-radius:24px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);box-shadow:0 24px 60px rgba(0,0,0,.22)}
+#foxgetForm{display:grid;gap:16px}
+#foxgetForm label{display:grid;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.58)}
+#foxgetUrl{width:100%;min-height:60px;padding:17px 20px;border-radius:18px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);color:#fff;font-size:16px;outline:none;transition:border-color .18s,background .18s,box-shadow .18s}
+#foxgetUrl::placeholder{color:rgba(255,255,255,.38)}
+#foxgetUrl:focus{border-color:rgba(255,122,61,.9);background:rgba(255,255,255,.09);box-shadow:0 0 0 4px rgba(255,122,61,.15)}
+.foxget-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+#foxgetFormat,#foxgetQuality{min-height:52px;padding:0 16px;border-radius:14px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);color:#fff;outline:none}
+#foxgetFormat:focus,#foxgetQuality:focus{border-color:rgba(255,122,61,.9);box-shadow:0 0 0 4px rgba(255,122,61,.15)}
+#foxgetSubmit{min-height:56px;border:0;border-radius:16px;background:linear-gradient(135deg,#ff7a3d,#ff5d2e);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 14px 30px rgba(255,93,46,.25)}
+#foxgetSubmit:hover{filter:brightness(1.05)}

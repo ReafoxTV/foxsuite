@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-time]').forEach(e=>e.textContent=new Date(Number(e.dataset.time)*1000).toLocaleString("es-ES"));

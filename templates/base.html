@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FoxSuite</title>
+    <link rel="icon" href="/static/favicon.ico?v=foxdrop3" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" type="image/svg+xml" href="/static/foxdrop.svg?v=foxdrop3" sizes="any">
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=foxdrop3">
+    <link rel="stylesheet" href="/static/site.css?v=clean52">
+    <script src="/static/share-layout.js?v=clean14" defer></script>
+    <link rel="stylesheet" href="/static/portal.css?v=portal113">
+    <link rel="stylesheet" href="/static/foxconvert.css?v=15">
+  </head>
+  <body{% if request.endpoint == 'share' %} class="share-link-page"{% endif %}>
+    <main>
+      <header>
+        <a href="/">
+          <img class="brand-icon" src="/static/foxdrop.svg" alt="">
+          {{ 'FoxDrop' if request.endpoint == 'share' else 'FoxSuite' }}
+        </a>
+        {% if request.endpoint != 'share' %}<span>Caja de herramientas</span>{% endif %}
+      </header>
+      {% block body %}{% endblock %}
+    </main>
+  </body>
+</html>

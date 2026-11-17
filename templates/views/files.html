@@ -1,0 +1,20 @@
+<div id="view-files" class="view" hidden>
+  <div class="page-heading">
+    <span class="eyebrow">TODO EN SU SITIO</span>
+    <h1 id="filesHeading">Mis Archivos</h1>
+    <p>Revisa, comparte o elimina tus archivos.</p>
+  </div>
+  <section>
+    <div class="row">
+      <h2 id="filesTitle">Tus archivos</h2>
+      <button id="refresh" class="secondary small"><svg class="ui-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 10C22 10 19.995 7.26822 18.3662 5.63824C16.7373 4.00827 14.4864 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.1031 21 19.5649 18.2543 20.6482 14.5M22 10V4M22 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Actualizar</button>
+    </div>
+    <p id="storage" class="muted"></p>
+    <div class="file-filter-row" id="ownerFilterBox" hidden>
+      <label>Archivos de<select id="ownerFilter"><option value="all">Todos los usuarios</option></select></label>
+      <span id="fileCount"></span>
+    </div>
+    <div id="files"></div>
+    <input id="resumeFilePicker" type="file" hidden>
+  </section>
+</div>
